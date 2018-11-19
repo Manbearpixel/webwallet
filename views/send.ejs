@@ -1,0 +1,49 @@
+<%- include ./includes/_head %>
+
+<h1>Send ODIN</h1>
+<% if (locals.hex) { %>
+  <h2>Response</h2>
+  <h3>Raw Tx Hex</h3>
+  <pre><%- hex %></pre>
+
+  <h3>Response</h3>
+  <pre><%- response %></pre>
+<% } %>
+<form method="POST" action="/send">
+  <h2>Unspent</h2>
+  <dl>
+  <% for (unspentTx of unspent) { %>
+    <dt>TX >> <%- unspentTx.tx_hash %></dt>
+    <dd>
+      <a href="https://explore.odinblockchain.org/tx/<%-unspentTx.tx_hash%>">Link</a> || Height: <%- unspentTx.height %> || Amount: <%- unspentTx.value / 1e8 %>
+      <label for="<%- unspentTx.tx_hash %>">
+        <input id="<%- unspentTx.tx_hash %>" name="<%- unspentTx.tx_hash %>:<%- unspentTx.tx_pos %>" type="checkbox" value="<%- unspentTx.value %>">
+        <span>Use Transaction</span>
+      </label>
+    </dd>
+  <% } %>
+  </dl>
+
+  <h2>Transaction</h2>
+  <dl>
+    <dt>ODIN Available To Send</dt>
+    <dd><input name="available" type="text" value="" placeholder="Select unspent transactions" readonly></dd>
+
+    <dt>Fee (Fixed)</dt>
+    <dd><input name="fee" type="text" value="0.0001" readonly></dd>
+
+    <dt>Send To Address</dt>
+    <dd><input name="recipient" type="text" value="" placeholder="Enter an ODIN address"></dd>
+
+    <dt>ODIN To Send</dt>
+    <dd><input name="amount" type="text" value="" placeholder="Enter an amount to send"></dd>
+
+    <dt>ODIN Change</dt>
+    <dd><input name="change" type="text" value="" readonly></dd>
+
+    <dt>&nbsp;</dt>
+    <dd><button type="submit">Send Transaction</button></dd>
+  </dl>
+</form>
+
+<%- include ./includes/_footer %>

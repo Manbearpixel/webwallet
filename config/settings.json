@@ -1,0 +1,12 @@
+{
+  // port for website to run on
+  "port": 4000,
+
+  // connection details to electrumx server
+  // "type" can be one of: tcp (insecure) or tls (secure)
+  "electrumx": {
+    "uri": "electrumx.odinblockchain.org",
+    "port": 50443,
+    "type": "tls"
+  }
+}

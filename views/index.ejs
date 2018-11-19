@@ -1,0 +1,35 @@
+<%- include ./includes/_head %>
+
+<h1>Home</h1>
+<h2>Wallet</h2>
+<dl>
+  <dt>Confirmed Balance</dt>
+  <dd><%- balance.confirmed / 1e8 %></dd>
+
+  <dt>Unconfirmed Balance</dt>
+  <dd><%- balance.unconfirmed / 1e8 %></dd>
+  
+  <dt>Address</dt>
+  <dd><%- address %></dd>
+
+  <dt>Private Key</dt>
+  <dd><%- wif %></dd>
+</dl>
+
+<h2>Unspent</h2>
+<dl>
+<% for (unspentTx of unspent) { %>
+  <dt>TX >> <%- unspentTx.tx_hash %></dt>
+  <dd><a href="https://explore.odinblockchain.org/tx/<%-unspentTx.tx_hash%>">Link</a> || Height: <%- unspentTx.height %> || Amount: <%- unspentTx.value / 1e8 %></dd>
+<% } %>
+</dl>
+
+<h2>Transaction History</h2>
+<dl>
+<% for (tx of history) { %>
+  <dt>TX >> <%- tx.tx_hash %></dt>
+  <dd><a href="https://explore.odinblockchain.org/tx/<%-unspentTx.tx_hash%>">Link</a> || Height: <%- tx.height %></dd>
+<% } %>
+</dl>
+
+<%- include ./includes/_footer %>

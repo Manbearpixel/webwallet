@@ -1,0 +1,32 @@
+{
+  "name": "odin-webwallet-poc",
+  "version": "0.0.1",
+  "description": "Proof of Concept Web Wallet for ODIN Blockchain",
+  "main": "app.js",
+  "dependencies": {
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "ejs": "~2.5.7",
+    "electrum-client": "0.0.6",
+    "express": "~4.16.0",
+    "http-errors": "~1.6.2",
+    "jsonminify": "^0.4.1",
+    "morgan": "~1.9.0",
+    "node-sass-middleware": "0.11.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node ./bin/www",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Manbearpixel/odin-webwallet-poc.git"
+  },
+  "author": "Pixxl <manbearpixel@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Manbearpixel/odin-webwallet-poc/issues"
+  },
+  "homepage": "https://github.com/Manbearpixel/odin-webwallet-poc#readme"
+}
