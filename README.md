@@ -6,7 +6,7 @@
 ## Setup
 1) Download `odinjs-lib` [Link](https://github.com/Manbearpixel/odinjs-lib)
 2) Switch to that directory and run `npm link`
-3) Download `odin-webwallet-poc` [Link](https://github.com/Manbearpixel/odin-webwallet-poc)
+3) Download `webwallet` [Link](https://github.com/Manbearpixel/odin-webwallet-poc)
 4) Switch to that directory and run `npm link odinjs-lib`
 5) Install other dependencies for this project with `npm install`
 6) Run the web wallet with `npm run start`
